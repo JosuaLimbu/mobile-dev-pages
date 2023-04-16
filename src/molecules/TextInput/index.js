@@ -1,7 +1,7 @@
 import React from 'react'
 import { TextInput, Text, StyleSheet, View } from 'react-native'
 
-const CustomTextInput = ({label, placeholder, secure, value, onChangeText}) => {
+const CustomTextInput = ({label, placeholder, value, onChangeText}) => {
   return (
     <View>
       <Text style={styles.textInput}>{label}</Text>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
+import List from '../../molecules/List';
 import axios from 'axios';
 
 const UserList = () => {
@@ -13,17 +14,17 @@ const UserList = () => {
 
   const renderUserItem = ({ item }) => (
     <View style={styles.userItem}>
-      <Text style={styles.userDetails}><Text style={styles.textBold}>Name: </Text>{item.name}</Text>
-      <Text style={styles.userDetails}><Text style={styles.textBold}>Username: </Text>{`@${item.username}`}</Text>
-      <Text style={styles.userDetails}><Text style={styles.textBold}>Email: </Text>{item.email}</Text>
-      <Text style={styles.userDetails}><Text style={styles.textBold}>Address: </Text>{`${item.address.street}, ${item.address.suite}, ${item.address.city}, ${item.address.zipcode}`}</Text>
-      <Text style={styles.userDetails}><Text style={styles.textBold}>Phone: </Text>{item.phone}</Text>
+      <List label={"Name: "} item={item.name}/>
+      <List label={"Username: "} item={`@${item.username}`}/>
+      <List label={"Email: "} item={item.email}/>
+      <List label={"Address: "} item={`${item.address.street}, ${item.address.suite}, ${item.address.city}, ${item.address.zipcode}`}/>
+      <List label={"Phone: "} item={item.phone}/>
     </View>
   );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>Users List</Text>
+      <Text style={styles.welcome} textAlign="left">Users List</Text>
       <FlatList
         data={users}
         renderItem={renderUserItem}
@@ -38,14 +39,14 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: 'black',
     fontWeight: 'bold',
-    margin: 0,
+    marginLeft: 10,
     marginBottom: 30,
     backgroundColor: '#F5FCFF',
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
   },
   

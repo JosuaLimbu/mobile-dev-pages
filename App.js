@@ -2,9 +2,9 @@
 import React from "react";
 import CoreComponents from "./src/CoreComponents.js";
 import SignIn from "./src/screens/SignIn";
-import SignIn2 from "./src/screens/SignIn2/index.js";
-import Register from "./src/screens/Register/index.js";
-import UserList from "./src/screens/UserList/index.js";
+import SignIn2 from "./src/screens/SignIn2";
+import Register from "./src/screens/Register";
+import UserList from "./src/screens/UserList";
 
 
 const App = () => {
@@ -14,7 +14,11 @@ const App = () => {
   // subTitle="Welcome to mobile legends"
   // />
   // <SignIn/>
+
+  //Exercise 9
+  //No. 1
   // <Register/>
+  //No. 2
   <UserList/>
   );
 };
